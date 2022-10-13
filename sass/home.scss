@@ -1,0 +1,200 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background: black url(../imgs/background.jpg) no-repeat fixed center center / cover;
+    min-height: 100vh;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.header {
+    width: 100%;
+    height: 60px;
+    color: white;
+    background-color: yellow;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.header h1{
+    font-size: 3em;
+}
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
+    min-height: 100vh;
+    gap: 10px;
+    .item {
+        padding: 10px;
+        min-width: 500px;
+        background-color: rgba(0, 0, 0, 0.247);
+        border-radius: 10px;
+    }
+    .user-input {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input {
+            width: 300px;
+            height: 50px;
+            padding: 5px;
+            border: 2px solid $cor4;
+            caret-color: $cor4;
+            font-weight: bold;
+            font-size: 20px;
+            &::placeholder {
+                color: $cor4;
+                font-weight: bold;
+                text-align: right;
+                padding: 10px;
+            }
+            &:focus{
+                background-color: $cor2;
+                border: 2px solid $cor4;
+                color: $cor3;
+                &::placeholder {
+                    color: white;
+                }
+            }
+            &:hover {
+                border: 2px solid $cor4;
+            }
+        }
+    }
+    .pw-input {
+        @extend .user-input;
+    }
+    .terms {
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        label{
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            a{
+                @extend label;
+                padding: 0;
+                text-decoration: none;
+                border-bottom: 1px solid white;
+
+                &:hover {
+                    color: $cor4;
+                    border-bottom: 1px solid $cor4;
+                }
+            }
+
+        }
+    }
+    .btn {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding:20px;
+        button {
+            cursor: pointer;
+            color: $cor4;
+            font-size: 1em;
+            width: 190px;
+            height: 30px;
+            padding: 20px;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            &:hover {
+                background-color: $cor4;
+                color: white;
+            }
+            @extend .btn
+        }
+    }
+}
+
+@media (max-width: 520px){
+    .container {
+        .item {
+            min-width: 90vw;
+        }
+    }
+}
+@media (max-width: 415px){
+    .container {
+        .item {
+            background-color: transparent;
+        }
+    }
+    .terms {
+        label{
+            font-size: 0.8em;
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 380px){
+    .container {
+        .item {
+            img {
+                display: none;
+            }
+        }
+        .user-input {
+            input{
+                width: 80vw;
+                position: relative;
+                font-size: 1em;
+            }
+        }
+        .terms {
+            label{
+                font-size: 1em;
+                text-align: center;
+            }
+        }
+        .btn {
+            button {
+                width: 150px;
+            }
+        }
+    }
+}
+@media (max-width: 323px){
+    .terms {
+        label{
+            font-size: 0.9em;
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 308px){
+    .terms {
+        label{
+            font-size: 0.7em;
+            text-align: center;
+        }
+    }
+}
+@media (max-width: 288px){
+    .terms {
+        label{
+            font-size: 0.7em;
+            text-align: center;
+        }
+        a {
+            font-size: 0.7em;
+        }
+    }
+}
